@@ -7,10 +7,7 @@
 	],
 	"license": "MIT",
 	"homepage": "",
-	"author": {
-		"name": "Nathan Lazo",
-		"email": "nathanlazo@outlook.com"
-	},
+	"author": "Nathan Lazo <nathanlazo@outlook.com> (https://nathan-lazo.com)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/NathanLazo/n8n-nodes-parse-number.git"
