@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-parse-number",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Parse Phone Number",
 	"keywords": [
 		"n8n-community-node-package"
@@ -34,7 +34,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"nodes": [
-			"dist/nodes/ExampleNode/ParseNumber.node.js"
+			"dist/nodes/ParseNumber/ParseNumber.node.js"
 		]
 	},
 	"devDependencies": {
