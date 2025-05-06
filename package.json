@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-parse-number",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Parse Phone Number",
 	"keywords": [
 		"n8n-community-node-package"
