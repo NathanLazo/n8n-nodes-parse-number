@@ -37,7 +37,7 @@ export class ParseNumber implements INodeType {
 		const phone = parsePhoneNumberFromString(parseNumber, 'MX');
 
 		if (!phone || !phone.isValid()) {
-			return 'Número no válido';
+			return this.prepareOutputData({ json: { parsedNumber: 'not valid number' } });
 		}
 
 		const parsedNumber = phone.formatInternational();
