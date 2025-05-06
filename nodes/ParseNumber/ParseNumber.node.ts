@@ -30,6 +30,10 @@ export class ParseNumber implements INodeType {
 		// const items = this.getInputData();
 
 		const parseNumber = this.getNodeParameter('parseNumber', 0) as string;
+		// if it contains more than 12 numbers return 'Número no válido'
+		if (parseNumber.replace(/\D/g, '').length > 12) {
+			return this.prepareOutputData({ json: { parsedNumber: 'not valid number' } });
+		}
 		const phone = parsePhoneNumberFromString(parseNumber, 'MX');
 
 		if (!phone || !phone.isValid()) {
@@ -39,7 +43,7 @@ export class ParseNumber implements INodeType {
 		const parsedNumber = phone.formatInternational();
 
 		if (!parsedNumber) {
-			return this.prepareOutputData({ json: { parsedNumber: 'Número no válido' } });
+			return this.prepareOutputData({ json: { parsedNumber: 'something went wrong' } });
 		}
 
 		return this.prepareOutputData({ json: { parsedNumber } });
