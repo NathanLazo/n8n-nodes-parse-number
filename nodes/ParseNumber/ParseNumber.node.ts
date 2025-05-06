@@ -28,7 +28,6 @@ export class ParseNumber implements INodeType {
 
 	async execute(this: any) {
 		// const items = this.getInputData();
-		const returnData = [];
 
 		const parseNumber = this.getNodeParameter('parseNumber', 0) as string;
 		const phone = parsePhoneNumberFromString(parseNumber, 'MX');
@@ -39,8 +38,10 @@ export class ParseNumber implements INodeType {
 
 		const parsedNumber = phone.formatInternational();
 
-		returnData.push({ json: { parsedNumber } });
+		if (!parsedNumber) {
+			return this.prepareOutputData({ json: { parsedNumber: 'Número no válido' } });
+		}
 
-		return this.prepareOutputData(returnData);
+		return this.prepareOutputData({ json: { parsedNumber } });
 	}
 }
